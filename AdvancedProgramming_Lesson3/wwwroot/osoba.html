@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Osoby</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Osoby</h1>
+    <h3>Dodaj</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="Podaj imię">
+        <input type="text" id="add-surname" placeholder="Podaj nazwisko">
+        <input type="submit" value="Wyślij">
+    </form>
+    <div id="spoiler">
+        <h3>Edycja</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-surname">
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <p id="counter"></p>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="people"></tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="osoba.js"></script>
+</body>
+</html>

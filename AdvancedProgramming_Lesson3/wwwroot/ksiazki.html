@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Książki</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Książki</h1>
+    <h3>Dodaj</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-author" placeholder="Podaj autora">
+        <input type="text" id="add-title" placeholder="Podaj tytuł">
+        <input type="submit" value="Wyślij">
+    </form>
+    <div id="spoiler">
+        <h3>Edycja</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-author">
+            <input type="text" id="edit-title">
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <p id="counter"></p>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Autor</th>
+            <th>Tytuł</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="books"></tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="ksiazki.js"></script>
+</body>
+</html>
